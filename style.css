@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.container{
+  width: 100vw;
+  height: 50vh;
+  max-height: 700px;
+  max-width: 600px;
+  background-color: gray;
+  display: grid;
+  grid-template: repeat(3,1fr) / repeat(3,1fr);
+  grid-gap: 10px;
+}
+body.over .container{
+  cursor: no-drop;
+}
+body.over .container .item{
+  pointer-events: none;
+}
+.item{
+  width: 100%;
+  /* height: calc(100vw/100*30); */
+  height: 100%;
+  background-color: white;
+}
+.playerTitle{
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.playerX{
+  background-image: url(https://image.flaticon.com/icons/svg/748/748122.svg);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+.computer{
+  background-image: url(./img/circle.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+.rematch{
+  cursor: pointer;
+  padding: 20px 50px;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 30px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+body.over .rematch{
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
